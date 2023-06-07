@@ -1,0 +1,32 @@
+.btn {
+  @include pxRem(border-radius, 5);
+  @include pxRem(font-size, 18);
+  @include pxRem(width, 157);
+  @include pxRem(height, 48);
+  @include pxRem(line-height, 24.55);
+  @include pxRem(box-shadow, 0 10 40 -12 rgba(250, 202, 16, 0.35));
+  font-family: "Nunito";
+  font-weight: 700;
+  background: map-get($colors, primary);
+  color: map-get($colors, white);
+  cursor: pointer;
+  transition: background 400ms ease;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.05;
+  justify-content: center;
+  &-sm {
+    @include pxRem(height, 44);
+  }
+  &-secondary {
+    @include pxRem(box-shadow, 0 10 40 -12 rgba(30, 30, 30, 0.35));
+    background-color: map-get($colors, black);
+  }
+  &-bars {
+    @include pxRem(border-radius, 5);
+    @include pxRem(padding, 5);
+    @include pxRem(font-size, 22);
+    background-color: map-get($colors, white);
+  }
+}

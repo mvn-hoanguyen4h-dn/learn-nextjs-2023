@@ -1,0 +1,74 @@
+.case {
+  &-list {
+    @include pxRem(max-width, 864);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-item {
+    @include pxRem(margin-left, 41);
+    width: 25%;
+    position: relative;
+    span {
+      @include pxRem(width, 157);
+      @include pxRem(height, 48);
+      @include pxRem(border-radius, 5);
+      font-weight: map-get($font-weight, bold);
+      color: map-get($colors, txt-light);
+      background-color: map-get($colors, white);
+      text-align: center;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      text-transform: capitalize;
+      left: 50%;
+      transform: translateX(-50%);
+      &::before {
+        @include pxRem(width, 19);
+        @include pxRem(height, 2);
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 100%;
+        display: block;
+        position: absolute;
+        background-color: map-get($colors, secondary);
+      }
+      &::after {
+        @include pxRem(width, 22);
+        @include pxRem(height, 22);
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        right: calc(100% + 19px);
+        background-color: map-get($colors, secondary);
+      }
+      &:hover {
+        background-color: map-get($colors, primary);
+        color: map-get($colors, white);
+        &::after,
+        &::before {
+          background-color: map-get($colors, primary);
+        }
+      }
+    }
+  }
+}
+
+// responsive
+@media only screen and (max-width: map-get($breakpoints, medium)) {
+  .case {
+    &-list {
+      @include pxRem(margin-left, 41);
+      flex-wrap: wrap;
+    }
+    &-item {
+      @include pxRem(margin, 20 0);
+      width: 50%;
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.solution {
+  @include pxRem(padding, 100 0);
+  &-left {
+    @include pxRem(height, 777);
+    &-wrapper {
+      @include pxRem(width, 656);
+      position: relative;
+      height: 100%;
+    }
+  }
+  &-list {
+    position: relative;
+    height: 100%;
+  }
+  &-item {
+    @include pxRem(padding, 52 27 52 27);
+    @include pxRem(width, 285);
+    @include pxRem(height, 352);
+    @include pxRem(border-radius, 30);
+    @include pxRem(border, 1 solid map-get($colors, yellow));
+    @include pxRem(box-shadow, 0 0 20 rgba(0, 0, 0, 0.25));
+    background-color: map-get($colors, white);
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+    &:first-child {
+      left: 0;
+    }
+    &:nth-child(2) {
+      @include pxRem(top, 193);
+      @include pxRem(left, 370);
+    }
+    &:last-child {
+      @include pxRem(top, 425);
+      @include pxRem(left, 42);
+    }
+    img {
+      @include pxRem(height, 102);
+      width: auto;
+    }
+    h3 {
+      @include pxRem(margin, 30 0 12 0);
+      text-transform: capitalize;
+    }
+  }
+  .big-gray {
+    position: absolute;
+    &-1 {
+      @include pxRem(top, 106);
+      @include pxRem(left, 315);
+      opacity: 0.1;
+    }
+    &-2 {
+      @include pxRem(top, 586);
+      @include pxRem(left, 375);
+    }
+    &-3 {
+      @include pxRem(top, 650);
+      @include pxRem(left, 289);
+    }
+  }
+  .light-yellow {
+    position: absolute;
+    &-1 {
+      @include pxRem(top, 327);
+    }
+    &-2 {
+      @include pxRem(top, 520);
+      @include pxRem(left, 506);
+    }
+  }
+  .if-img {
+    @include pxRem(left, 130);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 12;
+  }
+  &-right {
+    &-wrapper {
+      @include pxRem(margin, 35);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .section-title {
+      text-align: left;
+    }
+  }
+  &-content {
+    @include pxRem(margin, 18 0 52 0);
+  }
+}
+
+// responsive
+@media only screen and (max-width: map-get($breakpoints, large)) {
+  .solution {
+    &-left {
+      &-wrapper {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

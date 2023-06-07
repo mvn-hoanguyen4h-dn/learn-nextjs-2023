@@ -1,0 +1,75 @@
+.frustration {
+  @include pxRem(padding, 90 0 30 0);
+  @include pxRem(height, 600);
+  background-color: map-get($colors, bg-gray);
+  .section-title {
+    text-align: left;
+  }
+  &-content {
+    @include pxRem(margin, 22 0 26 0);
+  }
+  &-list {
+    @include pxRem(margin-left, 27);
+  }
+  &-item {
+    @include pxRem(margin-bottom, 10);
+    span {
+      @include pxRem(margin-left, 10);
+      @include pxRem(font-size, 18);
+      @include pxRem(line-height, 32);
+      @include pxRem(letter-spacing, 0.1);
+      font-weight: map-get($font-weight, normal);
+      font-family: "Lora";
+    }
+  }
+  &-left {
+    display: flex;
+    align-items: center;
+  }
+  &-right {
+    position: relative;
+  }
+  &-circle {
+    position: absolute;
+  }
+  &-chart {
+    position: absolute;
+    width: 100%;
+    z-index: 12;
+  }
+  .yellow-circle {
+    // @include pxRem(left, 245);
+    @include pxRem(top, 275);
+    left: 38%;
+  }
+  .light-yellow {
+    // @include pxRem(left, 340);
+    @include pxRem(top, 328);
+    left: 53%;
+  }
+  .big-gray-1 {
+    // @include pxRem(left, 435);
+    @include pxRem(top, 256);
+    left: 68%;
+  }
+  .big-gray-2 {
+    // @include pxRem(left, 565);
+    @include pxRem(top, 305);
+    left: 88%;
+  }
+  .small-gray {
+    // @include pxRem(left, 470);
+    @include pxRem(top, 381);
+    left: 73%;
+  }
+}
+
+// responsive
+@media only screen and (max-width: map-get($breakpoints, medium)) {
+  .frustration {
+     @include pxRem(height, 980);
+     &-right {
+      @include pxRem(margin-top, 60);
+     }
+  }
+}

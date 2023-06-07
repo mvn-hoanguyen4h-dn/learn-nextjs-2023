@@ -1,0 +1,20 @@
+.slick-arrow {
+  &:before {
+    display: none;
+  }
+}
+.slick-slider {
+  position: relative;
+}
+.slick-arrow {
+  position: absolute;
+  svg {
+    @include pxRem(width, 7.5);
+    @include pxRem(height, 15);
+    color: map-get($colors, black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

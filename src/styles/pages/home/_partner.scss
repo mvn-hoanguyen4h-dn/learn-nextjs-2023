@@ -1,0 +1,71 @@
+.partner {
+  @include pxRem(padding-top, 100);
+  .slick-slider {
+    @include pxRem(padding, 0 46);
+  }
+  .slick-arrow {
+    @include pxRem(width, 50);
+    @include pxRem(height, 50);
+    background-color: map-get($colors, secondary);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 10px 40px -12px rgba(250, 202, 16, 0.35);
+  }
+  .slide {
+    @include pxRem(margin, 20 0 107 0);
+    @include pxRem(height, 150);
+    &-item {
+      @include pxRem(padding, 30);
+      @include pxRem(height, 180);
+    }
+    &-link {
+      @include pxRem(border-radius, 20);
+      height: 100%;
+      background-color: map-get($colors, secondary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background-color: map-get($colors, white);
+        box-shadow: 0 10px 20px rgba(5, 5, 5, 0.08);
+        img {
+          filter: unset;
+          opacity: 1;
+        }
+      }
+    }
+    &-img {
+      filter: grayscale(100%);
+      opacity: 0.5;
+    }
+  }
+}
+
+// responsive
+@media only screen and (max-width: map-get($breakpoints, large)) {
+  .partner {
+    &-slide {
+      &-item {
+        @include pxRem(padding, 15);
+      }
+      &-link {
+        &:hover {
+          box-shadow: 0 5px 10px rgba(5, 5, 5, 0.08);
+        }
+      }
+    }
+    .slick-slider {
+      @include pxRem(padding, 0 65);
+    }
+    .slick-arrow {
+      &.slick-prev {
+        left: 0;
+      }
+      &.slick-next {
+        right: 0;
+      }
+    }
+  }
+}

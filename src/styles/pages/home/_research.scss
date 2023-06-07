@@ -1,0 +1,54 @@
+.research {
+  @include pxRem(padding, 100 0);
+  &-bottom {
+    @include pxRem(margin, 0 70);
+    align-items: center;
+    position: relative;
+    &-content {
+      @include pxRem(margin, 13 0 33 0);
+    }
+    &-right {
+      position: relative;
+    }
+    .light-yellow {
+      position: absolute;
+      @include pxRem(height, 139);
+      @include pxRem(width, 139);
+      @include pxRem(left, -25);
+      @include pxRem(bottom, -57);
+    }
+  }
+  .slide {
+    &-img {
+      object-fit: center;
+    }
+    .slick-list {
+      @include pxRem(border-radius, 25);
+      @include pxRem(height, 441);
+      @include pxRem(width, 497);
+      @include pxRem(border, 13 solid map-get($colors, white));
+      @include pxRem(box-shadow, 0 0 20 rgba(0, 0, 0, 0.1));
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 12;
+    }
+    .slick-arrow {
+      @include pxRem(width, 46);
+      @include pxRem(height, 38);
+      @include pxRem(top, 57);
+      @include pxRem(border, 2 solid map-get($colors, white));
+      background-color: map-get($colors, primary);
+      z-index: 13;
+      &.slick-prev {
+        @include pxRem(left, -19);
+        @include pxRem(border-top-left-radius, 30);
+        @include pxRem(border-bottom-left-radius, 30);
+      }
+      &.slick-next {
+        @include pxRem(border-top-right-radius, 30);
+        @include pxRem(border-bottom-right-radius, 30);
+        @include pxRem(left, 27);
+      }
+    }
+  }
+}

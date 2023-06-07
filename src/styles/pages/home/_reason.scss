@@ -1,0 +1,55 @@
+.reason {
+  @include pxRem(padding, 96 0);
+  background-color: map-get($colors, bg-gray-light);
+  &-bottom {
+    @include pxRem(padding, 66 41);
+    @include pxRem(margin-top, 60);
+    background-color: map-get($colors, white);
+    &-title {
+      display: flex;
+      align-items: center;
+      h3 {
+        @include pxRem(margin-left, 19);
+        @include pxRem(line-height, 41);
+        .underline-end {
+          &::after {
+            @include pxRem(bottom, 8);
+          }
+        }
+      }
+    }
+    &-content {
+      @include pxRem(margin-left, 85);
+      p {
+        @include pxRem(margin-bottom, 30);
+      }
+    }
+  }
+  &-brand {
+    @include pxRem(border-radius, 25);
+    @include pxRem(height, 280);
+    @include pxRem(width, 550);
+    @include pxRem(border, 10 solid map-get($colors, white));
+    @include pxRem(box-shadow, 0 0 20 rgba(0, 0, 0, 0.25));
+  }
+}
+
+// responsive
+@media only screen and (max-width: map-get($breakpoints, medium)) {
+  .reason {
+    &-content {
+      @include pxRem(margin-bottom, 20);
+    }
+    &-bottom {
+      @include pxRem(margin-top, 30);
+      &-right {
+        @include pxRem(margin-top, 40);
+      }
+    }
+    &-brand {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

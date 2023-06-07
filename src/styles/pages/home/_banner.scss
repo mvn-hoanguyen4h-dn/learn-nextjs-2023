@@ -1,0 +1,84 @@
+.banner {
+  @include pxRem(height, 650);
+  position: relative;
+  background: url("../../../images/home-banner.png") no-repeat;
+  background-size: cover;
+  &-wrapper {
+    height: 100%;
+    position: relative;
+    .curve {
+      @include pxRem(width, 37);
+      @include pxRem(height, 37);
+      position: absolute;
+      overflow: hidden;
+      .concave {
+        @include pxRem(width, 74);
+        @include pxRem(height, 74);
+        @include pxRem(box-shadow, -25 -25 map-get($colors, bg-overlay));
+        border-radius: 50%;
+        position: absolute;
+      }
+      &-top-left {
+        top: 0;
+        left: 100%;
+      }
+      &-bottom-left {
+        bottom: 0;
+        left: 100%;
+        transform: rotate(-90deg);
+      }
+      &-top-right {
+        top: 0;
+        right: 0;
+        transform: rotate(90deg);
+      }
+      &-bottom-right {
+        bottom: 0;
+        right: 0;
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &-left {
+    height: 100%;
+    position: relative;
+    background-color: map-get($colors, bg-overlay);
+  }
+  &-title {
+    @include pxRem(width, 620);
+    @include pxRem(font-size, 52);
+    @include pxRem(font-weight, 900);
+    @include pxRem(line-height, 69.37);
+  }
+  &-content {
+    @include pxRem(width, 437);
+    @include pxRem(margin, 5 0 30 0);
+    @include pxRem(font-size, 18);
+    font-weight: 400;
+  }
+  &-circle {
+    @include pxRem(width, 190);
+    @include pxRem(height, 190);
+    @include pxRem(top, 180);
+    @include pxRem(border, solid 35);
+    left: 38%;
+    position: absolute;
+    background-color: transparent;
+    border-radius: 50%;
+    border-color: rgba(254, 255, 255, 0.3) rgba(254, 255, 255, 0.3)
+      rgba(254, 255, 255, 0.3) transparent;
+  }
+  &-info {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+// responsive
+@media only screen and (max-width: map-get($breakpoints, large)) {
+  .banner {
+    background-position: center center;
+  }
+}
